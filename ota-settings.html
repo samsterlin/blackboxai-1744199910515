@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTA Settings - HotelSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="flex items-center justify-center h-16 border-b">
+            <i class="fas fa-hotel text-primary text-2xl mr-2"></i>
+            <span class="text-xl font-bold text-gray-800">HotelSync</span>
+        </div>
+        <nav class="mt-6">
+            <a href="dashboard.html" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-tachometer-alt mr-3"></i>
+                Dashboard
+            </a>
+            <a href="ota-settings.html" class="flex items-center px-6 py-3 text-gray-700 bg-gray-100 border-l-4 border-primary">
+                <i class="fas fa-cog mr-3"></i>
+                OTA Settings
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-calendar-alt mr-3"></i>
+                Bookings
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-dollar-sign mr-3"></i>
+                Rates
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-box mr-3"></i>
+                Inventory
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 p-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">OTA Settings</h1>
+                <p class="text-gray-600">Manage your OTA channel configurations</p>
+            </div>
+            <button onclick="openAddModal()" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition duration-300">
+                <i class="fas fa-plus mr-2"></i>Add New Channel
+            </button>
+        </div>
+
+        <!-- OTA Channels Grid -->
+        <div id="ota-channels" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Channel cards will be dynamically inserted here -->
+        </div>
+
+        <!-- Channel Health Section -->
+        <div class="mt-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Channel Health</h2>
+            <div class="bg-white rounded-lg shadow-sm p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="border-r border-gray-200 pr-6">
+                        <h3 class="text-lg font-semibold mb-4">API Status</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span>Booking.com</span>
+                                <span class="flex items-center text-green-500">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Online
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>MakeMyTrip</span>
+                                <span class="flex items-center text-green-500">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Online
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Expedia</span>
+                                <span class="flex items-center text-red-500">
+                                    <i class="fas fa-circle text-xs mr-2"></i>Offline
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-r border-gray-200 px-6">
+                        <h3 class="text-lg font-semibold mb-4">Last 24h Sync</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span>Booking.com</span>
+                                    <span class="text-sm text-gray-600">98%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 98%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span>MakeMyTrip</span>
+                                    <span class="text-sm text-gray-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-1">
+                                    <span>Expedia</span>
+                                    <span class="text-sm text-gray-600">0%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-6">
+                        <h3 class="text-lg font-semibold mb-4">Recent Events</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm">Rates synced successfully on Booking.com</p>
+                                    <p class="text-xs text-gray-500">5 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm">Inventory updated on MakeMyTrip</p>
+                                    <p class="text-xs text-gray-500">15 minutes ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm">Failed to connect to Expedia API</p>
+                                    <p class="text-xs text-gray-500">1 hour ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Channel Modal -->
+    <div id="addModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-md p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Add New Channel</h3>
+                <button onclick="closeAddModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="addChannelForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Channel Name</label>
+                    <input type="text" name="channel_name" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required placeholder="e.g., Booking.com Main">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Channel Type</label>
+                    <select name="channel_type" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        <option value="">Select Channel</option>
+                        <option value="booking.com">Booking.com</option>
+                        <option value="makemytrip">MakeMyTrip</option>
+                        <option value="expedia">Expedia</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Hotel ID</label>
+                    <input type="text" name="hotel_id" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">API Key</label>
+                    <input type="text" name="api_key" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">API Secret</label>
+                    <input type="password" name="api_secret" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_rates" class="form-checkbox text-primary" checked>
+                        <span class="ml-2 text-sm">Sync Rates</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_inventory" class="form-checkbox text-primary" checked>
+                        <span class="ml-2 text-sm">Sync Inventory</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_bookings" class="form-checkbox text-primary" checked>
+                        <span class="ml-2 text-sm">Sync Bookings</span>
+                    </label>
+                </div>
+                <div class="flex justify-end space-x-3 mt-6">
+                    <button type="button" class="px-4 py-2 border rounded-lg hover:bg-gray-50" onclick="closeAddModal()">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition duration-300">
+                        Add Channel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Channel Modal -->
+    <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-md p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Edit Channel</h3>
+                <button onclick="closeEditModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="editChannelForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Channel Name</label>
+                    <input type="text" name="channel_name" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Channel Type</label>
+                    <select name="channel_type" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        <option value="booking.com">Booking.com</option>
+                        <option value="makemytrip">MakeMyTrip</option>
+                        <option value="expedia">Expedia</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Hotel ID</label>
+                    <input type="text" name="hotel_id" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" required>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_rates" class="form-checkbox text-primary">
+                        <span class="ml-2 text-sm">Sync Rates</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_inventory" class="form-checkbox text-primary">
+                        <span class="ml-2 text-sm">Sync Inventory</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="sync_bookings" class="form-checkbox text-primary">
+                        <span class="ml-2 text-sm">Sync Bookings</span>
+                    </label>
+                </div>
+                <div class="flex justify-end space-x-3 mt-6">
+                    <button type="button" class="px-4 py-2 border rounded-lg hover:bg-gray-50" onclick="closeEditModal()">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition duration-300">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/ota-settings.js"></script>
+</body>
+</html>
