@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HotelSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-gray-50">
+    <!-- Sidebar -->
+    <div class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg">
+        <div class="flex items-center justify-center h-16 border-b">
+            <i class="fas fa-hotel text-primary text-2xl mr-2"></i>
+            <span class="text-xl font-bold text-gray-800">HotelSync</span>
+        </div>
+        <nav class="mt-6">
+            <a href="#" class="flex items-center px-6 py-3 text-gray-700 bg-gray-100 border-l-4 border-primary">
+                <i class="fas fa-tachometer-alt mr-3"></i>
+                Dashboard
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-calendar-alt mr-3"></i>
+                Bookings
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-dollar-sign mr-3"></i>
+                Rates
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-box mr-3"></i>
+                Inventory
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-chart-bar mr-3"></i>
+                Reports
+            </a>
+            <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                <i class="fas fa-cog mr-3"></i>
+                Settings
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="ml-64 p-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
+                <p class="text-gray-600">Welcome back, Hotel Manager</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="bg-white p-2 rounded-full text-gray-600 hover:text-gray-700">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Profile" class="w-8 h-8 rounded-full">
+                    <span class="ml-2 text-gray-700">John Doe</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-600">Total Bookings</h3>
+                    <i class="fas fa-book text-primary text-xl"></i>
+                </div>
+                <p class="text-2xl font-bold">1,234</p>
+                <p class="text-green-500 text-sm">+12% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-600">Revenue</h3>
+                    <i class="fas fa-dollar-sign text-primary text-xl"></i>
+                </div>
+                <p class="text-2xl font-bold">$45,678</p>
+                <p class="text-green-500 text-sm">+8% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-600">Occupancy Rate</h3>
+                    <i class="fas fa-bed text-primary text-xl"></i>
+                </div>
+                <p class="text-2xl font-bold">78%</p>
+                <p class="text-red-500 text-sm">-3% from last month</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-gray-600">Active Channels</h3>
+                    <i class="fas fa-network-wired text-primary text-xl"></i>
+                </div>
+                <p class="text-2xl font-bold">5</p>
+                <p class="text-gray-500 text-sm">All channels active</p>
+            </div>
+        </div>
+
+        <!-- Channel Performance -->
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-6">Channel Performance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Bookings by Channel</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="Booking.com" class="w-8 h-8 rounded mr-3">
+                                <span>Booking.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">456</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-3/4 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="MakeMyTrip" class="w-8 h-8 rounded mr-3">
+                                <span>MakeMyTrip</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">324</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-1/2 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="Expedia" class="w-8 h-8 rounded mr-3">
+                                <span>Expedia</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">289</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-2/5 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Revenue by Channel</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="Booking.com" class="w-8 h-8 rounded mr-3">
+                                <span>Booking.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">$23,456</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-4/5 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="MakeMyTrip" class="w-8 h-8 rounded mr-3">
+                                <span>MakeMyTrip</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">$15,678</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-3/5 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/32" alt="Expedia" class="w-8 h-8 rounded mr-3">
+                                <span>Expedia</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-gray-700 mr-2">$12,345</span>
+                                <div class="w-32 h-2 bg-gray-200 rounded">
+                                    <div class="w-1/2 h-full bg-primary rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-900">Recent Bookings</h2>
+                <a href="#" class="text-primary hover:text-secondary">View All</a>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="text-left bg-gray-50">
+                            <th class="px-6 py-3 text-gray-600">Booking ID</th>
+                            <th class="px-6 py-3 text-gray-600">Guest</th>
+                            <th class="px-6 py-3 text-gray-600">Channel</th>
+                            <th class="px-6 py-3 text-gray-600">Check In</th>
+                            <th class="px-6 py-3 text-gray-600">Check Out</th>
+                            <th class="px-6 py-3 text-gray-600">Status</th>
+                            <th class="px-6 py-3 text-gray-600">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="px-6 py-4">#12345</td>
+                            <td class="px-6 py-4">John Smith</td>
+                            <td class="px-6 py-4">Booking.com</td>
+                            <td class="px-6 py-4">Jan 15, 2024</td>
+                            <td class="px-6 py-4">Jan 18, 2024</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Confirmed</span></td>
+                            <td class="px-6 py-4">$450</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">#12346</td>
+                            <td class="px-6 py-4">Sarah Johnson</td>
+                            <td class="px-6 py-4">MakeMyTrip</td>
+                            <td class="px-6 py-4">Jan 16, 2024</td>
+                            <td class="px-6 py-4">Jan 20, 2024</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Pending</span></td>
+                            <td class="px-6 py-4">$780</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">#12347</td>
+                            <td class="px-6 py-4">Mike Brown</td>
+                            <td class="px-6 py-4">Expedia</td>
+                            <td class="px-6 py-4">Jan 17, 2024</td>
+                            <td class="px-6 py-4">Jan 19, 2024</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-green-100 text-green-800 rounded">Confirmed</span></td>
+                            <td class="px-6 py-4">$560</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
