@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelSync - OTA Channel Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-hotel text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">HotelSync</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#features" class="text-gray-600 hover:text-primary px-3 py-2">Features</a>
+                    <a href="#partners" class="text-gray-600 hover:text-primary px-3 py-2">Partners</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary px-3 py-2">Pricing</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary px-3 py-2">Contact</a>
+                    <a href="dashboard.html" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition duration-300">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Manage All Your OTA Channels in One Place
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Streamline your hotel bookings across Booking.com, MakeMyTrip, and other platforms with our powerful channel manager.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300">
+                            Get Started
+                        </a>
+                        <a href="#" class="border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.pexels.com/photos/1838640/pexels-photo-1838640.jpeg" alt="Hotel Management" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Powerful Features for Your Hotel</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-sync text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Real-time Sync</h3>
+                    <p class="text-gray-600">Automatically sync rates and availability across all channels in real-time.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-chart-line text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Get detailed insights and reports about your bookings and revenue.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-calendar-alt text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Booking Management</h3>
+                    <p class="text-gray-600">Manage all your bookings from different channels in one central system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Channel Partners</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md">
+                    <span class="text-xl font-semibold text-gray-700">Booking.com</span>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md">
+                    <span class="text-xl font-semibold text-gray-700">MakeMyTrip</span>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md">
+                    <span class="text-xl font-semibold text-gray-700">Expedia</span>
+                </div>
+                <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md">
+                    <span class="text-xl font-semibold text-gray-700">Agoda</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Simple, Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4">Starter</h3>
+                    <p class="text-4xl font-bold mb-6">$49<span class="text-lg text-gray-600">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Up to 20 rooms</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>2 OTA channels</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Basic reports</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300">Get Started</a>
+                </div>
+                <div class="p-8 bg-primary rounded-lg shadow-lg text-white transform scale-105">
+                    <h3 class="text-2xl font-bold mb-4">Professional</h3>
+                    <p class="text-4xl font-bold mb-6">$99<span class="text-lg opacity-80">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i>Up to 50 rooms</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i>5 OTA channels</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i>Advanced analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i>Priority support</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-white text-primary px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300">Get Started</a>
+                </div>
+                <div class="p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <p class="text-4xl font-bold mb-6">Custom</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Unlimited rooms</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>All OTA channels</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Custom integration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>24/7 support</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
+            <div class="max-w-3xl mx-auto">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hotel text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">HotelSync</span>
+                    </div>
+                    <p class="text-gray-400">Simplifying hotel channel management for better revenue and efficiency.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Partners</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 HotelSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
